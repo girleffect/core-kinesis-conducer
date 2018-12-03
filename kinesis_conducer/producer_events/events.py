@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 
 from kinesis_conducer.producer_events import schemas, utils
-from kinesis_conducer.producer import KINESIS_PRODUCER
+from kinesis_conducer.producers import KINESIS_PRODUCER
 
 
 def put_event(event_type, site_id, **kwargs):
