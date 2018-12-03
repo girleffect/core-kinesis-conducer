@@ -3,7 +3,7 @@ import os
 import boto3
 from environs import Env
 
-from kinesis_conducer.producers import GEKinesisProducer
+from kinesis_conducer.producer import GEKinesisProducer
 
 env = Env()
 
