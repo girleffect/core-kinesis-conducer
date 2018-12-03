@@ -8,7 +8,7 @@ from kinesis_conducer.producers import KINESIS_PRODUCER
 
 def put_event(event_type, site_id, **kwargs):
     """
-    Generic method used for most Kinesis put record events.
+    Generic method used to put all event types into Kinesis.
     """
 
     schema = schemas.EventTypes.SCHEMAS[event_type]
@@ -16,7 +16,7 @@ def put_event(event_type, site_id, **kwargs):
     # Append BASE_SCHEMA values to all event data
     kwargs.update(
         {
-            "timestamp": pytz.utc.localize(datetime.utcnow()).isoformat(),
+            "timestamp": f"{datetime.utcnow().isoformat()}Z",
             "site_id": site_id,
             "event_type": event_type
         }
