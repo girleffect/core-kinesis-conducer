@@ -25,12 +25,10 @@ class DummyProducer:
 # Instantiate dummy producer object, to be replaced if actual producer is setup
 KINESIS_PRODUCER = DummyProducer()
 
-# TODO generalise comment
-# To ensure there are no Django startup issues, this module does not rely
-# on settings.py for setup variables.
-# It can also not be instantiated under all circumstances. The extra process
-# the producer creates halts some of Django's management commands, as the
-# process does not terminate automatically.
+# The extra process the producer creates has been known to halt some of the
+# services' command line actions, as the process does not terminate
+# automatically. It waits for a shutdown signal which it does not receive under
+# most circumstances.
 if env.bool("USE_KINESIS_PRODUCER", False) and not env.bool("BUILDER", False):
     print("Kinesis producer setup commencing...")
 
