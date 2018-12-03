@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import pytz
 
 from kinesis_conducer.producer_events import schemas, utils
 from kinesis_conducer.producers import KINESIS_PRODUCER
@@ -16,7 +17,7 @@ def put_event(event_type, site_id, **kwargs):
     # Append BASE_SCHEMA values to all event data
     kwargs.update(
         {
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": pytz.utc.localize(datetime.utcnow()).isoformat(),
             "site_id": site_id,
             "event_type": event_type
         }

@@ -7,6 +7,22 @@ from kinesis_conducer.producers.producer import GEKinesisProducer
 
 env = Env()
 
+class DummyProducer:
+    """
+    A DummyProducer object to prevent attribute errors when the producer is
+    used, but not setup. The producer does not have a response that processes
+    should block for, making this a safe replacement.
+    """
+
+    def __getattr__(self, name):
+        return self.__getattribute__("dummy_method")
+
+    def dummy_method(self, *args, **kwargs):
+        return None
+
+# Instantiate dummy producer object, to be replaced if actual producer is setup
+KINESIS_PRODUCER = DummyProducer()
+
 # TODO generalise comment
 # To ensure there are no Django startup issues, this module does not rely
 # on settings.py for setup variables.
