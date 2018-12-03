@@ -11,7 +11,6 @@ def put_event(event_type, site_id, **kwargs):
     Generic method used for most Kinesis put record events.
     """
 
-    # TODO: Check if this needs more elegant handling.
     schema = schemas.EventTypes.SCHEMAS[event_type]
 
     # Append BASE_SCHEMA values to all event data
