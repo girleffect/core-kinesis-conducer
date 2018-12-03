@@ -21,6 +21,7 @@ class DummyProducer:
     def dummy_method(self, *args, **kwargs):
         return None
 
+
 # Instantiate dummy producer object, to be replaced if actual producer is setup
 KINESIS_PRODUCER = DummyProducer()
 
