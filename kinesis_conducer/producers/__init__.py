@@ -7,6 +7,7 @@ from kinesis_conducer.producers.producer import GEKinesisProducer
 
 env = Env()
 
+
 class DummyProducer:
     """
     A DummyProducer object to prevent attribute errors when the producer is
