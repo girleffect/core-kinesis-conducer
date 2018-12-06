@@ -6,7 +6,7 @@ setup(
     name="core-kinesis-conducer",
     version="0.0.1",
     description="Girl Effect Core Kinesis Conducer",
-    long_description="".join(open(filename, "r").read() for filename in LONG_DESCRIPTION_FILES),
+    #long_description="".join(open(filename, "r").read() for filename in LONG_DESCRIPTION_FILES),
     author="Praekelt Consulting",
     author_email="dev@praekelt.com",
     license="BSD",
