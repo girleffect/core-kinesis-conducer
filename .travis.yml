@@ -1,7 +1,7 @@
 cache: pip
 language: python
 python:
-  - '3.7'
+  - '3.6'
 
 install:
   - pip install -r requirements.txt -r test-requirements.txt
