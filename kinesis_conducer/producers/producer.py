@@ -21,7 +21,7 @@ class GEAsyncProducer(AsyncProducer):
         self.alive = True
         self.max_count = max_count or self.MAX_COUNT
         self.max_size = max_size or self.MAX_SIZE
-        boto3_client_settings = {} or boto3_client_settings
+        boto3_client_settings = boto3_client_settings or {}
 
         if boto3_session is None:
             boto3_session = boto3.Session()
