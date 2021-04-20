@@ -42,7 +42,7 @@ setup(
         "offspring==0.1.1",
         "pbr==5.1.1",
         "pluggy==0.8.0",
-        "py==1.7.0",
+        "py==1.10.0",
         "pycodestyle==2.4.0",
         "pyflakes==2.0.0",
         "python-dateutil==2.7.5",
