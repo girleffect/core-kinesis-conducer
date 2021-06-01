@@ -52,7 +52,7 @@ setup(
         "six==1.11.0",
         "toml==0.10.0",
         "tox==3.5.3",
-        "urllib3==1.24.1",
+        "urllib3==1.26.5",
         "virtualenv==16.1.0"
     ]
 )
